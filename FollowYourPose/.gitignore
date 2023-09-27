@@ -1,6 +1,3 @@
-
-/checkpoints
-
 /data
 
 /figs
@@ -20,8 +17,6 @@
 /stable_diffusion.egg-info
 
 /__pycache__
-
-/output
 
 *.pyc
 
