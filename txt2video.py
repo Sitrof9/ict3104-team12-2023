@@ -174,6 +174,7 @@ def main(
         save_path = f"{output_dir}/inference/sample-{global_step}-{str(seed)}-{now}.gif"
         save_videos_grid(samples, save_path)
         logger.info(f"Saved samples to {save_path}")
+        print(save_path[0:-4])
 
 
 
