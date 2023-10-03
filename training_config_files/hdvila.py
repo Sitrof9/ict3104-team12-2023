@@ -21,7 +21,7 @@ import csv
 #############################added to train model####################################
 
 # Define the path to save the CSV file
-csv_file_path = '/content/FollowYourPose/followyourpose/data/caption_rm2048_train.csv'
+csv_file_path = '/content/ict3104-team12-2023/FollowYourPose/followyourpose/data/caption_rm2048_train.csv'
 
 # Define the number of synthetic samples you want to generate for each part
 # This number of sample depends on how many portion the part has been split
@@ -88,7 +88,7 @@ class HDVilaDataset(Dataset):
             #self.text_name = 'caption_2048_val_new.csv'
         #self.meta_path = os.path.join(self.data_dir, self.text_name)
 
-        self.data_dir = '/content/FollowYourPose/followyourpose/data'
+        self.data_dir = '/content/ict3104-team12-2023/FollowYourPose/followyourpose/data'
         if dataset_set=='train':
             self.text_name = 'caption_rm2048_train.csv'
         else:
