@@ -32,13 +32,6 @@ from einops import rearrange
 # Define a global logger
 logger = get_logger(__name__, log_level="INFO")
 
-# Function to parse command-line arguments
-def parse_arguments():
-    parser = argparse.ArgumentParser(description="Your program description")
-    parser.add_argument("--config", type=str, default="./configs/pose_train.yaml")
-    parser.add_argument("--video_path", type=str, default=None, help="Path to the video file")
-    return parser.parse_args()
-
 def main(
     pretrained_model_path: str,
     output_dir: str,
@@ -70,7 +63,6 @@ def main(
     enable_xformers_memory_efficient_attention: bool = True,
     seed: Optional[int] = None,
     skeleton_path: Optional[str] = None,
-    video_path: Optional[str] = None,  # New argument for video path
 ):
     *_, config = inspect.getargvalues(inspect.currentframe())
 
@@ -364,10 +356,12 @@ def main(
 
     accelerator.end_training()
 
-
 if __name__ == "__main__":
-    # Parse command-line arguments
-    args = parse_arguments()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", type=str)
 
-    # Call the main function with the arguments
-    main(**OmegaConf.load(args.config))
+    #added skeleton_path as a new argument for training
+    parser.add_argument("--skeleton_path", type=str)
+    
+    args = parser.parse_args()
+    main(args)

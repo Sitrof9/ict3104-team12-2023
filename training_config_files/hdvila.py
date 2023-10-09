@@ -224,6 +224,7 @@ class HDVilaDataset(Dataset):
         #edited to train model (force set for now)
         #cap_idx represents the index used to select a caption associated with a video (for now 1 caption per video)
         #caption = sample[1][int(cap_idx//64)]
+
         caption = sample[1][int(1)]
 
         frames = frames.permute(1,0,2,3)

@@ -9,6 +9,7 @@ train_data:
   #edited to train model
   #width: 512
   #height: 512
+
   width: 256
   height: 256
 
