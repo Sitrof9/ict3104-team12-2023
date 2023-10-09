@@ -18,31 +18,6 @@ from collections import OrderedDict
 import time
 import csv
 
-#############################added to train model####################################
-
-# Define the path to save the CSV file
-csv_file_path = '/content/ict3104-team12-2023/FollowYourPose/followyourpose/data/caption_rm2048_train.csv'
-
-# Define the number of synthetic samples you want to generate for each part
-# This number of sample depends on how many portion the part has been split
-num_samples_per_part = 1
-
-# Create synthetic data and write it to the CSV file
-with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['part_id', 'clip_id', 'caption']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-    writer.writeheader()
-
-    for part_id in range(1,11):
-        for clip_id in range(1, num_samples_per_part + 1):
-            clip_id_str = f"{clip_id:04d}"
-            caption = f"Sample caption for part_{part_id}/clip_{clip_id_str}"
-            writer.writerow({'part_id': part_id, 'clip_id': clip_id_str, 'caption': caption})
-
-print(f"Synthetic data CSV file created at {csv_file_path}")
-
-#####################################################################################
-
 class HDVilaDataset(Dataset):
     """
     HDVila Dataset.
