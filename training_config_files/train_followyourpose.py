@@ -357,11 +357,9 @@ def main(
     accelerator.end_training()
 
 if __name__ == "__main__":
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=str)
-
-    #added skeleton_path as a new argument for training
     parser.add_argument("--skeleton_path", type=str)
-    
     args = parser.parse_args()
-    main(args)
+    main(**OmegaConf.load(args.config))
