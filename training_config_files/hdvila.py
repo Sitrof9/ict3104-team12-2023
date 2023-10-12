@@ -63,7 +63,7 @@ class HDVilaDataset(Dataset):
             #self.text_name = 'caption_2048_val_new.csv'
         #self.meta_path = os.path.join(self.data_dir, self.text_name)
 
-        self.data_dir = '/content/ict3104-team12-2023/FollowYourPose/followyourpose/data'
+        self.data_dir = '/content/FollowYourPose/followyourpose/data'
         if dataset_set=='train':
             self.text_name = 'caption_rm2048_train.csv'
         else:
