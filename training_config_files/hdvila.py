@@ -54,15 +54,7 @@ class HDVilaDataset(Dataset):
         except:
             pass
         print('dataset rank:', global_rank, ' / ',all_rank, ' ')
-        
-        #edited to train model
-        #self.data_dir = 'Your dataset path'
-        #if dataset_set=='train':
-            #self.text_name = 'caption_rm2048_train.csv'
-        #else:
-            #self.text_name = 'caption_2048_val_new.csv'
-        #self.meta_path = os.path.join(self.data_dir, self.text_name)
-
+    
         self.data_dir = '/content/FollowYourPose/followyourpose/data'
         if dataset_set=='train':
             self.text_name = 'caption_rm2048_train.csv'
@@ -220,12 +212,7 @@ class HDVilaDataset(Dataset):
         else:
             cap_idx = big_cap_idx
         # print(middle_idx, small_cap_idx, big_cap_idx,cap_idx) 
-
-        #edited to train model (force set for now)
-        #cap_idx represents the index used to select a caption associated with a video (for now 1 caption per video)
-        #caption = sample[1][int(cap_idx//64)]
-
-        caption = sample[1][int(1)]
+        caption = sample[1][0]
 
         frames = frames.permute(1,0,2,3)
         skeleton_final = torch.zeros_like(frames).byte()

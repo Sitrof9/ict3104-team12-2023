@@ -5,14 +5,8 @@ train_data:
   video_path: "no path"
   prompt: "None"
   n_sample_frames: 12
-
-  #edited to train model
-  #width: 512
-  #height: 512
-
   width: 256
   height: 256
-
   sample_start_idx: 0
   sample_frame_rate: 4
   dataset_set: "train"
@@ -35,11 +29,7 @@ validation_data:
 
 learning_rate: 3e-5
 train_batch_size: 1
-
-#edited to train model
-#max_train_steps: 5000
 max_train_steps: 5
-
 checkpointing_steps: 1000
 validation_steps: 100
 trainable_modules:
