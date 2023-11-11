@@ -12,31 +12,33 @@ Open the notebook in Google Colab:
 ### Committing to Github
 File > Save a copy in Github
 
-## Installation for windows
+## Installation for Windows
 
 Ensure you have Anaconda installed
 
 [Install Anaconda here](https://www.anaconda.com/download)
 
-1. Navigate to your desired directory
-2. Clone the repository
+1. Open a terminal window (Command Prompt, Powershell on Windows; Terminal on Mac/Linux)
+2. Navigate to your desired directory
+3. Clone the repository
 ```sh
 git clone https://github.com/Sitrof9/ict3104-team12-2023.git
 ```
-3. Navigate to directory where repository is cloned using Anaconda Prompt
-4. Create a virtual environment using conda
+4. Navigate to directory where repository is cloned using Anaconda Prompt
+5. Create a virtual environment using conda
 ```sh
 conda create -n ict3104 python=3.8
 ```
-5. Activate the conda environment
+6. Activate the conda environment
 ```sh
 conda activate ict3104
 ```
-6. Install required packages listed in repository's requirements.txt 
+7. Install required packages listed in repository's requirements.txt 
 ```sh
 conda install --file requirements.txt
 ```
-7. Start Jupyter Notebook by running the following command
+8. Start Jupyter Notebook by running the following command
 ```sh
 jupyter notebook
 ```
+
